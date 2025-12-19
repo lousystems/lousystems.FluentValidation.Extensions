@@ -18,6 +18,6 @@
     
 
     <ItemGroup>
-        <None Include="../../docs/nuget_README.md" Pack="true" PackagePath="\" />
+        <None Include="../../../docs/nuget_README.md" Pack="true" PackagePath="\" />
     </ItemGroup>
 </Project>
