@@ -3,21 +3,6 @@
 
 A collection of lightweight, reusable validation extensions for **FluentValidation**. Designed to simplify complex business rules and maintain clean, readable validators in modern .NET applications.
 
-## 🚀 Installation
-
-Install the package via .NET CLI:
-
-```bash
-dotnet add package lousystems.FluentValidation.Extensions
-
-```
-
-Or via the NuGet Package Manager:
-
-```powershell
-Install-Package lousystems.FluentValidation.Extensions
-
-```
 
 ---
 
@@ -25,9 +10,11 @@ Install-Package lousystems.FluentValidation.Extensions
 
 This library extends `IRuleBuilder` to provide specialized validation logic out of the box.
 
-### 1. Service Name Validation
+### 1. Validating Network-related Fields
+#### IP Address Validation
+Strictly validates IPv4 and IPv6 addresses using the high-performance `System.Net.IPAddress` parser (no Regex). These extensions distinguish correctly between address families, ensuring an IPv6 address does not pass an IPv4 check and vice versa.
+More details can be found in the [IP Address Validation Documentation](https://github.com/lousystems/lousystems.FluentValidation.Extensions/blob/master/src/FluentValidation.Extensions/Validators/Net/Net.md).
 
-Validates strings against common cloud-resource naming conventions (e.g., lowercase, hyphens, specific length).
 
 ```csharp
 public class MyRequestValidator : AbstractValidator<MyRequest>
@@ -35,20 +22,12 @@ public class MyRequestValidator : AbstractValidator<MyRequest>
     public MyRequestValidator()
     {
         // Mandatory field
-        RuleFor(x => x.ServiceName).MustBeServiceName();
-
-        // Optional field: Only validates if not null
-        RuleFor(x => x.OptionalService).MustBeServiceNameIfNotNull();
+        RuleFor(x => x.ServerIp).MustBeIPv4();
     }
 }
 
 ```
 
-### 2. Conditional Logic
-
-The extensions are built using `ApplyConditionTo.AllValidators`, ensuring that entire rule chains are correctly skipped when properties are `null`, preventing unintended validation failures.
-
----
 
 ## 🏗 Technical Specifications
 
