@@ -1,0 +1,57 @@
+name: Chain: Test & Deploy
+
+# Trigger:
+# 1. Bei jedem Push auf main laufen die Tests.
+# 2. Wenn ein Tag (z.B. v1.0.0) gepusht wird, läuft Test UND Deploy.
+on:
+  push:
+    branches: [ "main" ]
+    tags: [ "v*" ]       # z.B. v1.0.0, v2.1.0-beta
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  # --- JOB 1: QUALITÄTSSICHERUNG ---
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      
+      - run: dotnet test --configuration Release
+
+  # --- JOB 2: DEPLOYMENT (Wartet auf Job 1) ---
+  deploy:
+    name: Publish to NuGet
+    runs-on: ubuntu-latest
+    
+    # DAS IST DER SCHLÜSSEL:
+    needs: test  
+    
+    # Bedingung: Nur ausführen, wenn 'test' erfolgreich war UND es ein Tag ist.
+    # Ohne das 'if' würde er bei jedem normalen Push versuchen zu deployen.
+    if: success() && startsWith(github.ref, 'refs/tags/v')
+
+    steps:
+      # WICHTIG: Neuer Job = Neuer Runner. 
+      # Der Code muss erneut ausgecheckt werden (oder via Artifacts übergeben werden).
+      - uses: actions/checkout@v4
+      
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Pack
+        run: |
+          # Version aus dem Tag extrahieren (v1.0.0 -> 1.0.0)
+          VERSION=${GITHUB_REF#refs/tags/v}
+          dotnet pack --configuration Release --output ./nupkg /p:PackageVersion=$VERSION
+
+      - name: Push
+        run: |
+          dotnet nuget push ./nupkg/*.nupkg \
+            --api-key ${{ secrets.NUGET_API_KEY }} \
+            --source https://api.nuget.org/v3/index.json
