@@ -1,7 +1,7 @@
-
+[![Build & Tests](https://github.com/lousystems/lousystems.FluentValidation.Extensions/actions/workflows/tests.yml/badge.svg)](https://github.com/lousystems/lousystems.FluentValidation.Extensions/actions/workflows/tests.yml)
 # lousystems.FluentValidation.Extensions
-
 A collection of lightweight, reusable validation extensions for **FluentValidation**. Designed to simplify complex business rules and maintain clean, readable validators in modern .NET applications.
+
 
 
 ---
