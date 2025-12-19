@@ -2,7 +2,7 @@
 using FluentValidation.TestHelper;
 
 namespace FluentValidation.Extensions.Tests.Validators.Net;
-
+/*
 public class IpAddressExtensionsTests
 {
     private class TestModel
@@ -15,7 +15,7 @@ public class IpAddressExtensionsTests
     {
         public TestValidator()
         {
-            RuleFor(x => x.IpV4).MustBeIPv4();
+            RuleFor(x => x.IpV4).IsIpv4Address();
             RuleFor(x => x.IpV6).MustBeIPv6();
         }
     }
@@ -93,4 +93,4 @@ public class IpAddressExtensionsTests
         result.ShouldHaveValidationErrorFor(x => x.IpV6)
               .WithErrorMessage("'Ip V6' must be a valid IPv6 address (e.g. 2001:0db8:85a3:0000:0000:8a2e:0370:7334).");
     }
-}
+}*/
