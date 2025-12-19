@@ -1,14 +1,14 @@
-name: Chain: Test & Deploy
+name: Test & Deploy
 
 # Trigger:
 # 1. Bei jedem Push auf main laufen die Tests.
 # 2. Wenn ein Tag (z.B. v1.0.0) gepusht wird, läuft Test UND Deploy.
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
     tags: [ "v*" ]       # z.B. v1.0.0, v2.1.0-beta
   pull_request:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 jobs:
   # --- JOB 1: QUALITÄTSSICHERUNG ---
