@@ -43,7 +43,7 @@ This project is licensed under the **MIT License**. See the `LICENSE` file for m
 
 ## 🤝 Contributing
 
-Contributions are welcome! If you find a bug or have a feature request, please open an issue or submit a pull request on our [GitHub Repository](https://github.com/lousystems/FluentValidation.Extensions).
+Contributions are welcome! If you find a bug or have a feature request, please open an issue or submit a pull request on our [GitHub Repository](https://github.com/lousystems/lousystems.FluentValidation.Extensions).
 
 ---
 
