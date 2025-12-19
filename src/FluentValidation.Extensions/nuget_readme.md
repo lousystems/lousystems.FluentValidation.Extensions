@@ -12,7 +12,7 @@ This library extends `IRuleBuilder` to provide specialized validation logic out 
 
 ### 1. Validating Network-related Fields
 #### IP Address Validation
-Strictly validates IPv4 and IPv6 addresses using the high-performance `System.Net.IPAddress` parser (no Regex). These extensions distinguish correctly between address families, ensuring an IPv6 address does not pass an IPv4 check and vice versa.
+Strictly validates IPv4 and IPv6 addresses.
 More details can be found in the [IP Address Validation Documentation](https://github.com/lousystems/lousystems.FluentValidation.Extensions/blob/master/src/FluentValidation.Extensions/Validators/Net/Net.md).
 
 
