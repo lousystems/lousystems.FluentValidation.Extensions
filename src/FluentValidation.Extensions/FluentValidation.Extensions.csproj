@@ -4,7 +4,20 @@
         <TargetFramework>net10.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <PackageId>lousystems.FluentValidation.Extensions</PackageId>
-    </PropertyGroup>
+        <PackageId>lousystems.FluentValidation.Extensions</PackageId> 
+        <PackageReadmeFile>nuget_README.md</PackageReadmeFile>
 
+        <Authors>lousystems</Authors>
+        <RepositoryUrl>https://github.com/lousystems/FluentValidation.Extensions</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageProjectUrl>https://github.com/lousystems/FluentValidation.Extensions</PackageProjectUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageTags>fluentvalidation;extensions;dotnet10</PackageTags>
+        <Copyright>Copyright (c) 2025 lousystems</Copyright>
+    </PropertyGroup>
+    
+
+    <ItemGroup>
+        <None Include="../../docs/nuget_README.md" Pack="true" PackagePath="\" />
+    </ItemGroup>
 </Project>
