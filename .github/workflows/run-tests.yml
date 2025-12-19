@@ -40,7 +40,7 @@ jobs:
         run: |
           # Version aus dem Tag extrahieren (v1.0.0 -> 1.0.0)
           #VERSION=${GITHUB_REF#refs/tags/v}
-          VERSION=1.0.14
+          VERSION=1.0.15
           dotnet pack src/FluentValidation.Extensions/FluentValidation.Extensions.csproj --configuration Release --output ./nupkg /p:PackageVersion=$VERSION
 
       - name: Push
