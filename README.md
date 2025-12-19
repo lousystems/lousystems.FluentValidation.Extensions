@@ -25,9 +25,6 @@ dotnet add package lousystems.FluentValidation.Extensions
 
 ## 💻 Usage
 
-### Network Validation (IPv4 & IPv6)
-
-These extensions use `IPAddress.TryParse` internally. They are significantly faster than Regex-based validators and correctly handle edge cases (like `::1` failing an IPv4 check).
 
 ```csharp
 using FluentValidation;
@@ -48,20 +45,6 @@ public class ServerConfigurationValidator : AbstractValidator<ServerConfiguratio
     }
 }
 
-```
-
-### Service Naming (Cloud Resources)
-
-Ensures strings adhere to common cloud resource naming conventions (lowercase, alphanumeric, hyphens).
-
-```csharp
-public class ResourceValidator : AbstractValidator<Resource>
-{
-    public ResourceValidator()
-    {
-        RuleFor(x => x.ServiceName).MustBeServiceName();
-    }
-}
 
 ```
 
