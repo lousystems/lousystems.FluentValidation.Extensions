@@ -52,8 +52,8 @@ The extensions are built using `ApplyConditionTo.AllValidators`, ensuring that e
 
 ## 🏗 Technical Specifications
 
-* **Target Frameworks:** .NET 8.0, .NET 9.0, and .NET 10.0 (LTS).
-* **Dependency:** [FluentValidation](https://www.nuget.org/packages/FluentValidation) (>= 11.0.0).
+* **Target Frameworks:**  .NET 10.0 (LTS).
+* **Dependency:** [FluentValidation](https://www.nuget.org/packages/FluentValidation) (>= 12.0.0).
 * **Native AOT Ready:** This library does not use reflection at runtime and is fully compatible with **Native AOT** (Ahead-of-Time) compilation for high-performance cloud-native workloads.
 
 ---
@@ -71,5 +71,3 @@ Contributions are welcome! If you find a bug or have a feature request, please o
 ### Technical Implementation Note
 
 When using the `IfNotNull` variants, the library handles the internal state by wrapping rules in a `When` condition. This keeps your validator code clean while ensuring strict type safety and null-handling.
-
-**Would you like me to add a specific section for Unit Testing these extensions to show your users how to verify their rules?**

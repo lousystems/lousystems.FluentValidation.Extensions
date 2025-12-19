@@ -11,7 +11,7 @@
         <RepositoryUrl>https://github.com/lousystems/FluentValidation.Extensions</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageProjectUrl>https://github.com/lousystems/FluentValidation.Extensions</PackageProjectUrl>
-        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
         <PackageTags>fluentvalidation;extensions;dotnet10</PackageTags>
         <Copyright>Copyright (c) 2025 lousystems</Copyright>
     </PropertyGroup>
@@ -19,5 +19,14 @@
 
     <ItemGroup>
         <None Include="nuget_README.md" Pack="true" PackagePath="\" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <None Include="../../LICENSE" Pack="true" PackagePath="\" />
+        <None Include="../../NOTICE" Pack="true" PackagePath="\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="FluentValidation" Version="12.1.1" />
     </ItemGroup>
 </Project>
