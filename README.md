@@ -71,7 +71,7 @@ To build and test this project locally, ensure you have the **.NET 10 SDK** (or 
 
 ```bash
 # Clone the repository
-git clone https://github.com/lousystems/FluentValidation.Extensions.git
+git clone https://github.com/lousystems/lousystems.FluentValidation.Extensions.git
 
 # Navigate to the solution
 cd FluentValidation.Extensions
