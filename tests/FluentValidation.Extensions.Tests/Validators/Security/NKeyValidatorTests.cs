@@ -2,7 +2,7 @@
 using FluentValidation.Extensions.Validators.Security.NKey;
 using FluentValidation.TestHelper;
 
-namespace FluentValidation.Extensions.Tests.Validators.Net;
+namespace FluentValidation.Extensions.Tests.Validators.Security;
 
 public class NKeyValidatorTests
 {
