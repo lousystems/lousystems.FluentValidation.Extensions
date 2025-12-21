@@ -85,7 +85,7 @@ Please ensure your code follows the existing style and that all tests pass.
 
 ## 📄 License
 
-This project is licensed under the **MIT License**. See the [LICENSE](https://www.google.com/search?q=LICENSE) file for details.
+This project is licensed under the **Apache 2.0 License**. See the [LICENSE](https://www.google.com/search?q=LICENSE) file for details.
 
 ---
 
