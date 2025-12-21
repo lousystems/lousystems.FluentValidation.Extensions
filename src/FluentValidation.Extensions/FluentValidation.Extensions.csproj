@@ -6,7 +6,10 @@
         <Nullable>enable</Nullable>
         <PackageId>lousystems.FluentValidation.Extensions</PackageId> 
         <PackageReadmeFile>nuget_README.md</PackageReadmeFile>
-
+        <Description>
+        Extensions for FluentValidation to provide additional validation rules and utilities to enhance the validation capabilities in .NET 10 applications.
+            Supports IpAddress, Url, Jwt, and more.
+        </Description>
         <Authors>lousystems</Authors>
         <RepositoryUrl>https://github.com/lousystems/FluentValidation.Extensions</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
