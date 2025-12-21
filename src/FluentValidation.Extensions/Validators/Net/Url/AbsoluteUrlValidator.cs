@@ -1,6 +1,6 @@
 ﻿using FluentValidation.Validators;
 
-namespace FluentValidation.Extensions.Validators.Net;
+namespace FluentValidation.Extensions.Validators.Net.Url;
 
 public class AbsoluteUrlValidator<T> : PropertyValidator<T, string?>
 {

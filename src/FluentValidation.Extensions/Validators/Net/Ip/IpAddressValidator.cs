@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using FluentValidation.Validators;
 
-namespace FluentValidation.Extensions.Validators.Net;
+namespace FluentValidation.Extensions.Validators.Net.Ip;
 
 public class IpAddressValidator<T> : PropertyValidator<T, string?>
 {

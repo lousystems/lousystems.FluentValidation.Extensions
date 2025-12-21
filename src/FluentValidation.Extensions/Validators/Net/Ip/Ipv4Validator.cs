@@ -2,7 +2,7 @@
 using System.Net.Sockets;
 using FluentValidation.Validators;
 
-namespace FluentValidation.Extensions.Validators.Net;
+namespace FluentValidation.Extensions.Validators.Net.Ip;
 
 public class Ipv4Validator<T> : PropertyValidator<T, string?>
 {

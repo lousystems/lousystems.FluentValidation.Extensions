@@ -1,8 +1,10 @@
-﻿namespace FluentValidation.Extensions.Validators.Net;
+﻿using FluentValidation.Extensions.Validators.Net.Ip;
+
+namespace FluentValidation.Extensions.Validators.Net;
 
 public static class IpValidators
 {
-    extension<T>(IRuleBuilder<T, string> ruleBuilder)
+    extension<T>(IRuleBuilder<T, string?> ruleBuilder)
     {
         public IRuleBuilderOptions<T, string?> IsIpv4Address()
             => ruleBuilder.SetValidator(new Ipv4Validator<T>());

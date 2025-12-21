@@ -1,18 +1,18 @@
-﻿namespace FluentValidation.Extensions.Validators.Net;
+﻿using FluentValidation.Extensions.Validators.Net.Url;
+
+namespace FluentValidation.Extensions.Validators.Net;
 
 public static class UrlValidators
 {
-    extension<T>(IRuleBuilder<T, string> ruleBuilder)
+    extension<T>(IRuleBuilder<T, string?> ruleBuilder)
     {
         public IRuleBuilderOptions<T, string?> IsAbsoluteUrl()
             => ruleBuilder.SetValidator(new AbsoluteUrlValidator<T>());
         
         public IRuleBuilderOptions<T, string?> IsRelativeUrl()
-            => ruleBuilder.SetValidator(new RelativeUrlRegexValidator<T>());
+            => ruleBuilder.SetValidator(new Url.RelativeUrlRegexValidator<T>());
         
         public  IRuleBuilderOptions<T, string?> IsUrl() 
             => ruleBuilder.SetValidator(new UrlValidator<T>());
-        
     }
-
 }

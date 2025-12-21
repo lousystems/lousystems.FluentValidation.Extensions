@@ -1,7 +1,7 @@
 ﻿using System.Text.RegularExpressions;
 using FluentValidation.Validators;
 
-namespace FluentValidation.Extensions.Validators.Net;
+namespace FluentValidation.Extensions.Validators.Net.Url;
 
 public partial class RelativeUrlRegexValidator<T> : PropertyValidator<T, string?>
 {

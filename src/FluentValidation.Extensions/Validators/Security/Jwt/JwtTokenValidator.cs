@@ -1,6 +1,6 @@
 ﻿using FluentValidation.Validators;
 
-namespace FluentValidation.Extensions.Validators.Security;
+namespace FluentValidation.Extensions.Validators.Security.Jwt;
 
 public class JwtTokenValidator<T> : PropertyValidator<T, string?>
 {
