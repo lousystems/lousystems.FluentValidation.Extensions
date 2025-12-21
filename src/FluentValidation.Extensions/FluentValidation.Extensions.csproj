@@ -11,9 +11,9 @@
             Supports IpAddress, Url, Jwt, and more.
         </Description>
         <Authors>lousystems</Authors>
-        <RepositoryUrl>https://github.com/lousystems/FluentValidation.Extensions</RepositoryUrl>
+        <RepositoryUrl>https://github.com/lousystems/lousystems.FluentValidation.Extensions</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
-        <PackageProjectUrl>https://github.com/lousystems/FluentValidation.Extensions</PackageProjectUrl>
+        <PackageProjectUrl>https://github.com/lousystems/lousystems.FluentValidation.Extensions</PackageProjectUrl>
         <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
         <PackageTags>fluentvalidation;extensions;dotnet10</PackageTags>
         <Copyright>Copyright (c) 2025 lousystems</Copyright>
