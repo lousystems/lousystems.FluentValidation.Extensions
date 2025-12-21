@@ -1,4 +1,6 @@
 ﻿
+For URL scroll down
+
 
 ### IP Address Validation
 
@@ -31,3 +33,38 @@ public class NetworkConfigValidator : AbstractValidator<NetworkConfig>
 * **Null Handling:** Returns `true` for `null` or empty strings to allow optional fields (standard FluentValidation behavior). Use `.NotEmpty()` to enforce presence.
 
 ---
+
+### URL Validation
+
+Provides comprehensive validation for Uniform Resource Locators, supporting both absolute URLs (e.g., website links) and relative URLs (e.g., API paths).
+
+#### Usage
+
+```csharp
+public class LinkValidator : AbstractValidator<LinkDto>
+{
+    public LinkValidator()
+    {
+        // Enforces absolute URLs (must include scheme like http, https, ftp)
+        // Valid: "https://www.example.com"
+        // Invalid: "/api/users", "www.google.com" (missing scheme)
+        RuleFor(x => x.Website).IsAbsoluteUrl();
+
+        // Enforces relative URLs (paths without scheme/host)
+        // Valid: "/assets/logo.png", "../images/file.jpg"
+        // Invalid: "http://localhost:5000"
+        RuleFor(x => x.AvatarPath).IsRelativeUrl();
+        
+        // Allows both valid absolute and relative URLs
+        RuleFor(x => x.RedirectTarget).IsUrl();
+    }
+}
+```
+
+#### Technical Behavior
+
+* **Absolute URLs:** Leverages `Uri.TryCreate` with `UriKind.Absolute` to ensure full compliance with RFC 3986. This ensures the URL contains a valid scheme and authority.
+* **Relative URLs:** Uses a specialized Regex pattern to validate paths, ensuring they are well-formed relative identifiers without protocol prefixes.
+* **Null Handling:** Returns `true` for `null` or empty strings to allow optional fields. Use `.NotEmpty()` to enforce presence.
+
+

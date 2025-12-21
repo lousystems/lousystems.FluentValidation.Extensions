@@ -6,7 +6,8 @@ A high-performance, **Native AOT-friendly** collection of validation extensions 
 
 This library focuses on providing optimized, reusable rules for modern .NET applications (Cloud-Native, APIs, Microservices) without the overhead of heavy Regex where simpler parsing suffices.
 ## 🚀 Features
-- **Network Validators**: IPv4 and IPv6 address validation. For Infomation check [here](https://github.com/lousystems/lousystems.FluentValidation.Extensions/blob/master/src/FluentValidation.Extensions/Validators/Net/Net.md).
+- **Network Validators**: IPv4 and IPv6 address validation and Url validation. For Infomation check [here](https://github.com/lousystems/lousystems.FluentValidation.Extensions/blob/master/src/FluentValidation.Extensions/Validators/Net/Net.md).
+- **Security & Identity Validators**: NATS NKey and JWT structural validation. For Infomation check [here](https://github.com/lousystems/lousystems.FluentValidation.Extensions/blob/master/src/FluentValidation.Extensions/Validators/Security/Security.md).
 ## 📦 Installation
 
 Install via the NuGet Package Manager:
